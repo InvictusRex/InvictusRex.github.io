@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <!--- Link to the CSS File-->
+        <link rel="stylesheet" href="E:\Work Files\Project - Portfolio Website\css\style.css">
+        <link rel="stylesheet" href="E:\Work Files\Project - Portfolio Website\css\skins\color-1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+
+    <body>
+        <!--- Main Container Start-->
+        <div class="main-container">
+            <!--- Aside Start-->
+            <div class="aside">
+                <div class="logo">
+                    <a href="#"><span>R</span>upankar</a>
+                </div>
+                <div class="nav-toggler">
+                    <span></span>
+                </div>
+                <ul class="nav">
+                    <li><a href="E:\Work Files\Project - Portfolio Website\1 - To Show\main.html" class="active"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="E:\Work Files\Project - Portfolio Website\1 - To Show\about.html"><i class="fa fa-user"></i> About</a></li>
+                    <li><a href="E:\Work Files\Project - Portfolio Website\1 - To Show\portfolio.html"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="E:\Work Files\Project - Portfolio Website\1 - To Show\gallery.html"><i class="fa fa-image"></i> Gallery</a></li> 
+                    <li><a href="#"><i class="fa fa-comments"></i> Contact Me</a></li>
+                </ul>
+            </div>
+            <!--- Aside End-->
+            
+            <!--- Main Content Start-->
+            <div class="main-content">
+                <!--- Portfolio Section Start --->
+                    <section class="portfolio section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="section-title padd-15">
+                                    <h2>Advanced Home Automation System</h2>
+                                </div>
+                            </div>
+                            <!--- Portfolio Section Start --->
+                    <section class="project-section">
+                        <div class="project-container">
+                            <div class="row">
+                                <div class="portfolio-heading padd-15">
+                                    <h3>Project Gallery :</h3>
+                                </div>
+                            </div>
+                            <div class="row padd-15">
+                                <div class="gallery-container">
+                                    <div class="gallery-item">
+                                        <img src="E:\Work Files\Project - Portfolio Website\images\39.jpg" alt="">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="E:\Work Files\Project - Portfolio Website\images\16.jpg" alt="">
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="E:\Work Files\Project - Portfolio Website\images\41.jpg" alt="">
+                                    </div>
+                            </div>
+                        </div>
+                    </section>
+                <!--- Portfolio Section End --->
+                            <div class="row">
+                                <div class="portfolio-heading padd-15">
+                                    <h3><br>Problem Statement :</h3>
+                                </div>
+                            </div>
+                            <div class="row padd-15">
+                                <div class="project-box">
+                                    <p>In the modern world, smart home automation systems have become increasingly popular, enabling
+                                        convenience, energy efficiency, and enhanced control over home appliances. This project demonstrates a
+                                        voice- and gesture-controlled home automation system utilizing an Arduino UNO, HC-05 Bluetooth
+                                        module, Python, OpenCV, and MIT App Inventor. The system allows users to control home appliances
+                                        such as fans and lights through voice commands and hand gestures, bridging communication between
+                                        smartphone applications and microcontrollers. The success of the project will be evaluated based on the
+                                        accuracy and reliability of the voice and gesture recognition systems, as well as the overall user
+                                        experience, with a focus on simplicity and ease of use for the end user. </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="portfolio-heading padd-15">
+                                    <h3><br>Social Need :</h3>
+                                </div>
+                            </div>
+                            <div class="row padd-15">
+                                <div class="project-box">
+                                    <p>This project addresses the growing social need for accessible and intuitive home automation solutions that
+                                        cater to diverse user groups, including children and individuals with special needs. By incorporating voicecommand functionality through a user-friendly smartphone application and gesture-based control utilizing
+                                        OpenCV for hand gesture recognition, the system provides an inclusive and seamless way to manage
+                                        home appliances. Additionally, the integration of serial communication between OpenCV and the Arduino
+                                        UNO ensures efficient and reliable gesture control. This approach emphasizes creating a simple yet
+                                        effective solution that enhances convenience and accessibility for all users, regardless of their physical or
+                                        technical abilities. </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="portfolio-heading padd-15">
+                                    <h3><br>Proposed Work / Methodology :</h3>
+                                </div>
+                            </div>
+                            <div class="row padd-15">
+                                <div class="project-box">
+                                    <p><strong>Voice-Controlled Functionality:</strong></p>
+                                    <ol>
+                                        <li><strong>Mobile App:</strong>  
+                                            We developed a custom mobile app using MIT App Inventor, which includes a voice recognition feature with RegEx  
+                                            implemented to pick up keywords in the user’s commands. Keywords for functionality control are as follows:  
+                                            <ol type="a">
+                                                <li>ON - Turns Fan On</li>
+                                                <li>OFF - Turns Fan Off</li>
+                                                <li>START - Turns on Lights</li>
+                                                <li>STOP - Turns off Lights</li>
+                                            </ol>
+                                        </li>
+                                        <li><strong>Bluetooth Communication:</strong>  
+                                            The app connects to the HC-05 module via Bluetooth. Commands from the app are transmitted to the Arduino via serial  
+                                            communication via the Arduino cable.
+                                        </li>
+                                        <li><strong>Arduino Execution:</strong>  
+                                            The Arduino, running an embedded C program, interprets the received commands and activates or deactivates the  
+                                            corresponding appliances.
+                                        </li>
+                                        <li>The app takes in user input as speech and converts it to text, where it matches the keyword in the backend, and sends a  
+                                            decimal value to the Arduino based on the input command given by the user.
+                                        </li>
+                                        <li>The Arduino, running a switch case, will compare the decimal input and perform the required functionality.</li>
+                                    </ol>
+
+                                    <p><strong>Gesture-Controlled Functionality:</strong></p>
+                                    <ol>
+                                        <li><strong>OpenCV for Gesture Recognition:</strong>  
+                                            Using Python and OpenCV, we developed a system to recognize specific hand gestures by  
+                                            counting the number of fingers visible in the camera’s frame.
+                                        </li>
+                                        <li><strong>Command Transmission:</strong>  
+                                            Based on the recognized gesture, Python sends a unique signal to the Arduino, triggering the corresponding  
+                                            functionality and running the application.
+                                        </li>
+                                        <li><strong>Integration with Arduino:</strong>  
+                                            The same embedded C code on the Arduino processes both Bluetooth commands and commands from the Python program. It  
+                                            activates the appliances based on the received signals.
+                                        </li>
+                                        <li>The Python OpenCV program opens the camera on the laptop and assigns each finger to a value in an array as either 1  
+                                            (raised) or 0 (down).
+                                        </li>
+                                        <li>It counts the number of fingers raised and accordingly sends a character value serially to the Arduino Uno via its  
+                                            COMM (communication) ports.
+                                        </li>
+                                        <li>The Arduino runs a switch case and executes the functionality respective to the input given by the Python program.</li>
+                                        <li>Additionally, connections with an L293D motor driver are given for controlling the speeds of DC motors attached to  
+                                            fans and other appliances.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="portfolio-heading padd-15">
+                                    <h3><br>Implementation :</h3>
+                                </div>
+                            </div>
+                            <div class="row padd-15">
+                                <div class="project-box">                                
+                                    <p><strong>Circuit Design:</strong></p>
+                                    <ol>
+                                        <li><strong>Fans & Lights:</strong> A simple circuit was created to connect the Arduino Uno to the Fan and
+                                            Lights to the various digital pins, enabling efficient switching On and Off of the appliances.</li>
+                                        <li><strong>HC-05 Module:</strong> The HC-05 Bluetooth module was connected to the Arduino Uno’s serial
+                                            RX and TX pins to receive data from the mobile app via Bluetooth.</li>
+                                        <li><strong>Grounding:</strong> It was ensured that a common ground was maintained throughout.</li>
+                                    </ol>
+                                
+                                    <p><strong>Code Development:</strong></p>
+                                    <ol>
+                                        <li><strong>Arduino Embedded C Code:</strong> The Arduino was programmed to listen for specific decimal
+                                            or character values given through serial communication and execute predefined functionalities 
+                                            given in switch cases for appliance control.</li>
+                                        <li><strong>Python Code with OpenCV:</strong> We wrote a Python script to capture video, detect hand 
+                                            gestures, and send corresponding signals to the Arduino. The gesture recognition system 
+                                            utilized contour and finger detection algorithms.</li>
+                                        <li><strong>Mobile App Development:</strong> Using MIT App Inventor, we developed a mobile app with 
+                                            Bluetooth connectivity and speech recognition capabilities to send voice commands to the 
+                                            Arduino.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <!--- Portfolio Section End --->
+            </div>
+            <!--- Main Content End -->
+        </div>
+        <!--- Main Container End-->
+
+        <!--- Link to JS Files-->
+    </body>
+</html>
