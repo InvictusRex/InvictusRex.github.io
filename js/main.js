@@ -110,28 +110,17 @@
   // Portfolio data
   const portfolioData = {
     robotics: {
-      title: "Robotics & Automation",
+      title: "F850 Quadcopter",
       description:
-        "My journey in robotics and automation has been focused on creating innovative solutions for real-world problems. I've worked on projects ranging from obstacle-avoiding robots to advanced home automation systems. My expertise includes microcontroller programming, sensor integration, and mechanical design for robotic systems.",
-      thumbnail: "images/portfolio/robotics.jpg",
+        "The F850 Quadcopter is a high-performance UAV designed for industrial applications, capable of carrying up to 10 kg of payload with a 30–40 minute flight time. Built with a carbon fiber frame and high-thrust brushless motors, it ensures durability, stability, and efficiency. Equipped with GPS, LiDAR, and optical flow sensors, it offers precise autonomous navigation and obstacle avoidance. Its modular design allows for payload customization, supporting aerial mapping, industrial inspections, logistics, and search & rescue missions. With failsafe mechanisms like redundant power systems and emergency landing protocols, the F850 is engineered for reliability and adaptability in critical operations.",
+      thumbnail: "images/17.jpg",
       gallery: [
         {
-          src: "images/portfolio/robotics/1.jpg",
-          caption: "4-Bit Arithmatic Logical Unit",
+          src: "images/11.jpg",
+          caption: "F850 Quadcopter Drone",
         },
         {
-          src: "images/portfolio/robotics/2.jpg",
-          caption: "Obstacle Avoiding Bot",
-        },
-        { src: "images/portfolio/robotics/3.jpg", caption: "F1 Car" },
-        { src: "images/portfolio/robotics/4.jpg", caption: "Weather Station" },
-        {
-          src: "images/portfolio/robotics/5.jpg",
-          caption: "Advanced Home Automation System",
-        },
-        {
-          src: "images/portfolio/robotics/6.jpg",
-          caption: "Object Detection & Display",
+          src: "images/17.jpg",
         },
       ],
     },
