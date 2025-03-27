@@ -109,146 +109,137 @@
 
   // Portfolio data
   const portfolioData = {
-    robotics: {
+    f850: {
       title: "F850 Quadcopter",
       description:
         "The F850 Quadcopter is a high-performance UAV designed for industrial applications, capable of carrying up to 10 kg of payload with a 30–40 minute flight time. Built with a carbon fiber frame and high-thrust brushless motors, it ensures durability, stability, and efficiency. Equipped with GPS, LiDAR, and optical flow sensors, it offers precise autonomous navigation and obstacle avoidance. Its modular design allows for payload customization, supporting aerial mapping, industrial inspections, logistics, and search & rescue missions. With failsafe mechanisms like redundant power systems and emergency landing protocols, the F850 is engineered for reliability and adaptability in critical operations.",
       thumbnail: "images/17.jpg",
       gallery: [
         {
-          src: "images/11.jpg",
-          caption: "F850 Quadcopter Drone",
+          src: "images/project/1.jpg",
+          caption: "In-Flight Testing",
         },
         {
           src: "images/17.jpg",
-        },
-      ],
-    },
-    drone: {
-      title: "Drone Technology",
-      description:
-        "I specialize in UAV (Unmanned Aerial Vehicle) technology, focusing on the design, construction, and testing of various drone configurations. My work includes quadcopters, bi-copters, and mono-copters, with a strong emphasis on flight control systems, electronic speed controllers, and power management for optimal performance.",
-      thumbnail: "images/portfolio/drone.jpg",
-      gallery: [
-        {
-          src: "images/portfolio/drone/1.jpg",
           caption: "F850 Quadcopter Drone",
         },
         {
-          src: "images/portfolio/drone/2.jpg",
-          caption: "Home-Made Quadcopter",
-        },
-        {
-          src: "images/portfolio/drone/3.jpg",
-          caption: "Bi-Copter Drone Testing",
-        },
-        {
-          src: "images/portfolio/drone/4.jpg",
-          caption: "Mono-Copter Drone Testing",
-        },
-        { src: "images/portfolio/drone/5.jpg", caption: "Drone Repair" },
-        {
-          src: "images/portfolio/drone/6.jpg",
-          caption: "Electronic Speed Controller Testing",
+          src: "images/project/2.jpg",
+          caption: "Custom FC Testing",
         },
       ],
     },
-    ml: {
-      title: "Machine Learning",
+    home: {
+      title: "Home-Made Quadcopter",
       description:
-        "My work in machine learning focuses on computer vision and data analysis applications. I've implemented various neural network architectures for tasks such as object detection, image classification, and pattern recognition. My projects include YOLO-based mobile phone detection and CNN models for medical image analysis.",
-      thumbnail: "images/portfolio/ml.jpg",
+        "This home-made quadcopter was built using off-the-shelf components and a custom-designed frame. It features a flight controller with GPS and barometer sensors for autonomous flight, and a 2.4 GHz radio transmitter for manual control. The quadcopter is powered by a 3S LiPo battery and equipped with brushless motors and electronic speed controllers for efficient propulsion. The frame is constructed from lightweight materials like cardboard and plywood, ensuring durability and agility during flight. The quadcopter is suitable for recreational flying, and educational purposes.",
+      thumbnail: "images/project/3.jpg",
       gallery: [
         {
-          src: "images/portfolio/ml/1.jpg",
-          caption: "YOLO - Mobile Phone Detection",
+          src: "images/18.jpg",
+          caption: "Cardboard Drone Frame",
         },
         {
-          src: "images/portfolio/ml/2.jpg",
-          caption: "CNN - Breast Cancer Detection",
+          src: "images/project/4.jpg",
+          caption: "3D Printed Drone Frame",
         },
         {
-          src: "images/portfolio/ml/3.jpg",
-          caption: "CNN - Fine Tuning ResNet50",
+          src: "images/project/5.jpg",
+          caption: "Plywoord Drone Frame",
         },
         {
-          src: "images/portfolio/ml/4.jpg",
-          caption: "Data Visualization Project",
+          src: "images/project/6.jpg",
+          caption: "PVC Pipe Drone Frame",
+        },
+        { src: "images/project/7.jpg", caption: "Aluminium Drone Frame" },
+      ],
+    },
+    esc: {
+      title: "ESC Testing",
+      description:
+        "Electronic Speed Controllers (ESCs) are essential components in drone propulsion systems, regulating the speed of brushless motors. This project involved testing and calibrating ESCs for optimal performance and reliability. The ESCs were connected to a microcontroller and power supply, and their response to throttle inputs was analyzed. The project also included programming the ESCs for different flight modes, such as stabilization, acrobatics, and autonomous flight. The ESCs were tested for efficiency, heat dissipation, and compatibility with various motors and propellers.",
+      thumbnail: "images/project/9.jpg",
+      gallery: [
+        {
+          src: "images/22.jpg",
+          caption: "SimonK 30A ESC Testing",
         },
         {
-          src: "images/portfolio/ml/5.jpg",
-          caption: "Natural Language Processing",
+          src: "images/project/8.jpg",
+          caption: "ESC Circuitry",
         },
         {
-          src: "images/portfolio/ml/6.jpg",
-          caption: "Reinforcement Learning Demo",
+          src: "images/project/10.jpg",
+          caption: "Advanced ESC Designing",
         },
       ],
     },
-    solar: {
-      title: "Solar Electric Vehicle",
+    coaxial: {
+      title: "Co-Axial Drone Testing",
       description:
-        "As the Co-Founder and Electrical Lead of Team REVA, I've been instrumental in developing solar-powered electric vehicles. My responsibilities include designing the electrical systems, battery management, and solar panel integration. Our team has participated in various exhibitions and competitions, showcasing our sustainable transportation solutions.",
-      thumbnail: "images/portfolio/solar.jpg",
+        "Co-Axial Drones are a type of multirotor UAV with two sets of counter-rotating propellers on the same axis. This configuration provides increased stability, lift, and payload capacity compared to conventional drones. The project involved designing and testing a co-axial drone prototype for industrial applications. The drone was equipped with a custom flight controller, GPS, and LiDAR sensors for autonomous navigation. It was tested for flight performance, stability, and obstacle avoidance in various environments. The co-axial drone demonstrated superior flight characteristics and payload capacity, making it suitable for aerial mapping, surveillance, and cargo delivery.",
+      thumbnail: "images/20.jpg",
       gallery: [
         {
-          src: "images/portfolio/solar/1.jpg",
-          caption: "REVA - Special Team Expo 01",
+          src: "images/project/11.jpg",
+          caption: "Co-Axial Octacopter Testing",
         },
         {
-          src: "images/portfolio/solar/2.jpg",
-          caption: "REVA - Special Team Expo 02",
+          src: "images/20.jpg",
+          caption: "Single-Rotor Co-Axial Drone Testing",
         },
         {
-          src: "images/portfolio/solar/3.jpg",
-          caption: "REVA - Solar Electric Vehicle",
-        },
-        {
-          src: "images/portfolio/solar/4.jpg",
-          caption: "REVA - Special Team Expo 03",
-        },
-        { src: "images/portfolio/solar/5.jpg", caption: "REVA - Robotica'25" },
-        { src: "images/portfolio/solar/6.jpg", caption: "REVA - Gravitas'24" },
-      ],
-    },
-    combat: {
-      title: "Combat Robotics",
-      description:
-        "My passion for combat robotics has led me to design and build competitive robots for various tournaments. I specialize in wedge bots and other combat robot configurations, focusing on robust mechanical design, powerful drive systems, and effective weapon mechanisms. I've participated in events like RoboWars'24 and Shaastra'25.",
-      thumbnail: "images/portfolio/combat.jpg",
-      gallery: [
-        { src: "images/portfolio/combat/1.jpg", caption: "Gravitas'24" },
-        {
-          src: "images/portfolio/combat/2.jpg",
-          caption: "RoboWars'24 - Wedge Bot",
-        },
-        { src: "images/portfolio/combat/3.jpg", caption: "RoboWars'24" },
-        {
-          src: "images/portfolio/combat/4.jpg",
-          caption: "Shaastra'25 - RoboSoccer",
-        },
-        { src: "images/portfolio/combat/5.jpg", caption: "REVA - Robotica'25" },
-        {
-          src: "images/portfolio/combat/6.jpg",
-          caption: "Team Cupcake - VIT Vellore",
+          src: "images/project/12.jpg",
+          caption: "Co-Axial Drone Schematics",
         },
       ],
     },
-    web: {
-      title: "Web Development",
+    swarm: {
+      title: "Swarm FPV Drones",
       description:
-        "I create responsive and dynamic websites using modern web technologies. My web development projects include portfolio websites, habit tracking applications, and organizational websites. I'm proficient in HTML, CSS, JavaScript, and various frameworks, with a focus on creating intuitive user interfaces and seamless user experiences.",
-      thumbnail: "images/portfolio/web.jpg",
+        "Swarm FPV Drones are a group of small, agile quadcopters equipped with First-Person View (FPV) cameras for racing and acrobatics. The drones are controlled remotely using radio transmitters and FPV goggles, providing an immersive flying experience. The project involved building and racing a swarm of FPV drones in indoor and outdoor environments. The drones were customized with LED lights, propeller guards, and custom frames for durability and visibility. The swarm was tested for speed, agility, and coordination in racing circuits and obstacle courses. The FPV drones demonstrated high performance and maneuverability, making them ideal for competitive drone racing.",
+      thumbnail: "images/project/14.jpg",
       gallery: [
-        { src: "images/portfolio/web/1.jpg", caption: "Portfolio Website" },
+        { src: "images/project/13.jpg", caption: "Homogeneous Drone Swarm" },
         {
-          src: "images/portfolio/web/2.jpg",
-          caption: "Habitua: Journey Tracker",
+          src: "images/42.jpg",
+          caption: "Heterogeneous Drone Swarm",
         },
-        { src: "images/portfolio/web/3.jpg", caption: "Robotics Club Website" },
-        { src: "images/portfolio/web/4.jpg", caption: "Login Page for Portal" },
-        { src: "images/portfolio/web/5.jpg", caption: "Resume Website" },
-        { src: "images/portfolio/web/6.jpg", caption: "Arch Linux Rice" },
+        { src: "images/project/15.jpg", caption: "Formation Flight" },
+      ],
+    },
+    mobile: {
+      title: "YOLO - Mobile Phone Detection",
+      description:
+        "YOLO (You Only Look Once) is a real-time object detection system that uses deep learning algorithms to identify objects in images and videos. The project involved training a YOLO model to detect mobile phones in live camera feeds. The model was trained on a dataset of mobile phone images and annotated with bounding boxes. The YOLO model was optimized for speed and accuracy, achieving real-time detection on mobile devices. The system was tested for mobile phone detection in various scenarios, such as indoor environments, crowds, and low-light conditions. The YOLO model demonstrated high detection rates and low latency, making it suitable for security, surveillance, and augmented reality applications.",
+      thumbnail: "images/29.jpg",
+      gallery: [
+        { src: "images/project/16.jpg", caption: "Confidence Annotations" },
+        {
+          src: "images/29.jpg",
+          caption: "Classes Annotations",
+        },
+        {
+          src: "images/project/17.jpg",
+          caption: "Evaluation Metrics & Graphs",
+        },
+      ],
+    },
+    fall: {
+      title: "Real-Time Fall Detection",
+      description:
+        "Fall detection is a critical task in healthcare and security applications, aimed at identifying and alerting authorities about individuals who have fallen or collapsed. This project involved developing a real-time fall detection system using mediapose, openpose, and yolopose. The system used pose estimation algorithms to track human body keypoints and detect abnormal movements indicative of a fall. The system was trained on a dataset of fall and non-fall videos, annotated with keypoint coordinates and fall labels. The fall detection system was optimized for speed and accuracy, achieving real-time detection on live camera feeds. The system was tested for fall detection in various scenarios, such as indoor environments, crowds, and low-light conditions. The system demonstrated high detection rates and low latency, making it suitable for healthcare, security, and surveillance applications.",
+      thumbnail: "images/project/18.jpg",
+      gallery: [
+        { src: "images/project/19.jpg", caption: "Bounding Box Approach" },
+        {
+          src: "images/project/20.jpg",
+          caption: "MediaPipe Pose Estimation",
+        },
+        {
+          src: "images/project/21.jpg",
+          caption: "Confidence Metrics Approach",
+        },
       ],
     },
   };
