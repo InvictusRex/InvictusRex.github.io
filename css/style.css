@@ -12,6 +12,20 @@
   --transition-speed: 0.3s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add offset for fixed header if you have one */
+section {
+  scroll-margin-top: 70px; /* Adjust this value based on your header height */
+}
+
+/* Ensure sections take full height for proper scrolling */
+.section {
+  min-height: 100vh;
+  padding: 70px 0;
+}
 /* ===== Dark Mode ===== */
 body.dark {
   --bg-black-900: #151515;

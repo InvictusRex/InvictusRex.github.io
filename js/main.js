@@ -404,14 +404,69 @@
       }, 300);
     });
   }
+  (() => {
+    // ... existing code ...
 
+    // Add smooth scrolling for hire me buttons
+    const hireMeButtons = document.querySelectorAll(".hire-me");
+
+    hireMeButtons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Get the target section id from href attribute
+        const target = this.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(target);
+
+        if (targetSection) {
+          // Remove active class from all sections
+          sections.forEach((section) => section.classList.remove("active"));
+
+          // Add active class to target section
+          targetSection.classList.add("active");
+
+          // Smooth scroll to the section
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+          // Update nav menu active state
+          navLinks.forEach((link) => {
+            if (link.getAttribute("href") === `#${target}`) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+
+          // Close navigation on mobile
+          if (window.innerWidth < 1200) {
+            aside.classList.remove("open");
+            navToggler.classList.remove("open");
+            mainContent.classList.remove("open");
+          }
+        }
+      });
+    });
+
+    // ... rest of your existing code ...
+  })();
   // Download CV
   const downloadCV = document.getElementById("download-cv");
   if (downloadCV) {
     downloadCV.addEventListener("click", (e) => {
       e.preventDefault();
-      // In a real application, this would download the CV file
-      alert("CV download functionality would be implemented here.");
+
+      const link = document.createElement("a");
+      // Using relative path since CV is in the same folder
+      link.href = "js/InvictusRex_CV.pdf";
+      // Using your username for the download filename
+      link.download = "InvictusRex_CV.pdf";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
   }
 
