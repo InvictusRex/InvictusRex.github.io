@@ -1,28 +1,35 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { SectionWrapper } from "./section-wrapper"
-import { SplitHeading } from "./split-heading"
-import { contactInfo } from "@/lib/portfolio-data"
-import { Mail, MapPin, Github, Linkedin, Send, CheckCircle } from "lucide-react"
+import { useState } from "react";
+import { SectionWrapper } from "./section-wrapper";
+import { SplitHeading } from "./split-heading";
+import { contactInfo } from "@/lib/portfolio-data";
+import {
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Send,
+  CheckCircle,
+} from "lucide-react";
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
+  });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // In production, this would send to an API endpoint
-    setSubmitted(true)
+    setSubmitted(true);
     setTimeout(() => {
-      setSubmitted(false)
-      setFormState({ name: "", email: "", message: "" })
-    }, 3000)
-  }
+      setSubmitted(false);
+      setFormState({ name: "", email: "", message: "" });
+    }, 3000);
+  };
 
   return (
     <SectionWrapper id="contact">
@@ -33,8 +40,8 @@ export function ContactSection() {
         Get In Touch
       </SplitHeading>
       <p className="mb-10 max-w-2xl text-base text-muted-foreground">
-        Interested in collaboration, research opportunities, or have a project in
-        mind? I would love to hear from you.
+        Interested in collaboration, research opportunities, or have a project
+        in mind? I would love to hear from you.
       </p>
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
@@ -153,7 +160,7 @@ export function ContactSection() {
       <div className="mt-20 border-t border-border pt-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="font-mono text-xs text-muted-foreground">
-            Designed & built by Arjun Mehta
+            Designed & built by Rupankar Majumdar
           </p>
           <p className="font-mono text-xs text-muted-foreground/50">
             Robotics / UAV / Edge AI
@@ -161,7 +168,7 @@ export function ContactSection() {
         </div>
       </div>
     </SectionWrapper>
-  )
+  );
 }
 
 function ContactCard({
@@ -170,10 +177,10 @@ function ContactCard({
   value,
   href,
 }: {
-  icon: React.ReactNode
-  label: string
-  value: string
-  href?: string
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href?: string;
 }) {
   const content = (
     <div className="flex items-center gap-3 rounded-lg border border-border bg-card/50 px-4 py-3 transition-colors hover:border-primary/30">
@@ -185,14 +192,14 @@ function ContactCard({
         <p className="truncate text-sm text-foreground">{value}</p>
       </div>
     </div>
-  )
+  );
 
   if (href) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer">
         {content}
       </a>
-    )
+    );
   }
-  return content
+  return content;
 }

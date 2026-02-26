@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin } from "lucide-react"
-import { SplitHeading } from "./split-heading"
-import { contactInfo } from "@/lib/portfolio-data"
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { SplitHeading } from "./split-heading";
+import { contactInfo } from "@/lib/portfolio-data";
 
 export function HeroSection() {
   const handleScroll = (href: string) => {
-    const el = document.getElementById(href)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
-  }
+    const el = document.getElementById(href);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -36,7 +36,7 @@ export function HeroSection() {
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             delay={0.2}
           >
-            Arjun Mehta
+            Rupankar Majumdar
           </SplitHeading>
 
           <motion.p
@@ -45,10 +45,10 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
           >
-            Building autonomous machines that perceive, decide, and act.
-            From custom UAV platforms to edge-deployed vision systems,
-            I engineer solutions at the intersection of robotics, flight,
-            and artificial intelligence.
+            Building autonomous machines that perceive, decide, and act. From
+            custom UAV platforms to edge-deployed vision systems, I engineer
+            solutions at the intersection of robotics, flight, and artificial
+            intelligence.
           </motion.p>
 
           <motion.div
@@ -106,18 +106,18 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="relative shrink-0"
         >
-          <div className="relative h-56 w-56 overflow-hidden rounded-2xl border border-border/60 md:h-72 md:w-72 lg:h-80 lg:w-80">
+          <div className="relative aspect-[1060/1280] w-56 overflow-hidden rounded-2xl border border-border/60 md:w-72 lg:w-80">
             <Image
               src="/images/profile.jpg"
-              alt="Arjun Mehta - Robotics & UAV Engineer"
+              alt="Rupankar Majumdar - Robotics & UAV Engineer"
               fill
               className="object-cover"
               priority
             />
           </div>
-          <div className="absolute -bottom-2 -right-2 h-56 w-56 rounded-2xl border border-primary/20 md:h-72 md:w-72 lg:h-80 lg:w-80" />
+          <div className="absolute -bottom-2 -right-2 aspect-[1060/1280] w-56 rounded-2xl border border-primary/20 md:w-72 lg:w-80" />
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

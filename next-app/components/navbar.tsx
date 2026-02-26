@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -11,40 +11,40 @@ const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
-]
+];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
+      setScrolled(window.scrollY > 40);
 
-      const sections = navItems.map((item) => item.href.replace("#", ""))
+      const sections = navItems.map((item) => item.href.replace("#", ""));
       for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i])
+        const el = document.getElementById(sections[i]);
         if (el) {
-          const rect = el.getBoundingClientRect()
+          const rect = el.getBoundingClientRect();
           if (rect.top <= 120) {
-            setActiveSection(sections[i])
-            break
+            setActiveSection(sections[i]);
+            break;
           }
         }
       }
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleClick = (href: string) => {
-    setMobileOpen(false)
-    const el = document.getElementById(href.replace("#", ""))
+    setMobileOpen(false);
+    const el = document.getElementById(href.replace("#", ""));
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" })
+      el.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <header
@@ -52,51 +52,63 @@ export function Navbar() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "border-b border-border/40 bg-background/70 backdrop-blur-xl"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
-        <button
-          onClick={() => handleClick("#home")}
-          className="font-heading text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
-        >
-          AM<span className="text-primary">.</span>
-        </button>
+      <nav className="px-4 py-4 md:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <button
+            onClick={() => handleClick("#home")}
+            className="font-heading text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
+          >
+            RM<span className="text-primary">.</span>
+          </button>
 
-        {/* Desktop nav */}
-        <ul className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <button
-                onClick={() => handleClick(item.href)}
-                className={cn(
-                  "relative px-3 py-2 text-sm font-medium transition-colors",
-                  activeSection === item.href.replace("#", "")
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {item.label}
-                {activeSection === item.href.replace("#", "") && (
-                  <motion.div
-                    layoutId="nav-indicator"
-                    className="absolute bottom-0 left-1/2 h-px w-6 -translate-x-1/2 bg-primary"
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
-              </button>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop nav */}
+          <ul className="-mr-3 hidden items-center gap-1 md:flex">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <button
+                  onClick={() => handleClick(item.href)}
+                  className={cn(
+                    "relative px-3 py-2 text-sm font-medium transition-colors",
+                    activeSection === item.href.replace("#", "")
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {item.label}
+                  {activeSection === item.href.replace("#", "") && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="absolute bottom-0 left-1/2 h-px w-6 -translate-x-1/2 bg-primary"
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                </button>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="relative z-50 p-2 text-foreground md:hidden"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          {/* Mobile hamburger */}
+          <div className="-mr-2 md:hidden">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative z-50 p-2 text-foreground"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -118,7 +130,7 @@ export function Navbar() {
                       "block w-full px-3 py-3 text-left text-sm font-medium transition-colors",
                       activeSection === item.href.replace("#", "")
                         ? "text-primary"
-                        : "text-muted-foreground hover:text-foreground"
+                        : "text-muted-foreground hover:text-foreground",
                     )}
                   >
                     {item.label}
@@ -130,5 +142,5 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }
