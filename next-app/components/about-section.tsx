@@ -1,15 +1,61 @@
-"use client"
+"use client";
 
-import { SectionWrapper } from "./section-wrapper"
-import { SplitHeading } from "./split-heading"
-import { Timeline, mapExperience, mapEducation } from "./timeline"
+import { SectionWrapper } from "./section-wrapper";
+import { SplitHeading } from "./split-heading";
+import { Timeline, mapExperience, mapEducation } from "./timeline";
 import {
   experiences,
   educationItems,
   techStack,
   contactInfo,
-} from "@/lib/portfolio-data"
-import { Mail, MapPin, Github, Linkedin, GraduationCap } from "lucide-react"
+} from "@/lib/portfolio-data";
+import { Mail, MapPin, Github, Linkedin, GraduationCap } from "lucide-react";
+
+const techDomains = [
+  {
+    title: "Drones & Robotics",
+    technologies: [
+      "ROS 2",
+      "ArduPilot",
+      "PX4",
+      "Jetson",
+      "STM32",
+      "Embedded C",
+      "FreeRTOS",
+      "CAN Bus",
+      "SolidWorks",
+      "KiCad",
+    ],
+  },
+  {
+    title: "Computer Vision",
+    technologies: ["OpenCV", "Python", "C++", "Jetson", "ROS 2"],
+  },
+  {
+    title: "Machine Learning",
+    technologies: [
+      "PyTorch",
+      "TensorRT",
+      "CUDA",
+      "Python",
+      "OpenCV",
+      "MATLAB",
+      "Simulink",
+    ],
+  },
+  {
+    title: "Development",
+    technologies: [
+      "Docker",
+      "Git",
+      "Linux",
+      "Altium Designer",
+      "KiCad",
+      "C++",
+      "Python",
+    ],
+  },
+] as const;
 
 export function AboutSection() {
   return (
@@ -23,12 +69,13 @@ export function AboutSection() {
 
       <div className="mb-12 max-w-3xl">
         <p className="text-base leading-relaxed text-muted-foreground">
-          I am a robotics engineer and researcher with a deep focus on autonomous aerial
-          systems and edge-deployed machine intelligence. My work spans the full stack of
-          robotics — from mechanical design and embedded firmware to computer vision and
-          real-time inference on resource-constrained hardware. I believe the future of
-          robotics lies at the intersection of capable hardware and intelligent software,
-          and I build systems that bridge that gap.
+          I am a robotics engineer and researcher with a deep focus on
+          autonomous aerial systems and edge-deployed machine intelligence. My
+          work spans the full stack of robotics — from mechanical design and
+          embedded firmware to computer vision and real-time inference on
+          resource-constrained hardware. I believe the future of robotics lies
+          at the intersection of capable hardware and intelligent software, and
+          I build systems that bridge that gap.
         </p>
       </div>
 
@@ -85,19 +132,37 @@ export function AboutSection() {
         <h3 className="mb-6 font-heading text-lg font-semibold text-foreground">
           Tech Stack
         </h3>
-        <div className="flex flex-wrap gap-2">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-md border border-border bg-secondary/50 px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {techDomains.map((domain) => {
+            const domainTechnologies = domain.technologies.filter(
+              (technology) => techStack.includes(technology),
+            );
+
+            return (
+              <div
+                key={domain.title}
+                className="rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+              >
+                <h4 className="mb-3 font-heading text-sm font-semibold text-foreground">
+                  {domain.title}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {domainTechnologies.map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-md border border-border bg-secondary/50 px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </SectionWrapper>
-  )
+  );
 }
 
 function InfoCard({
@@ -106,10 +171,10 @@ function InfoCard({
   value,
   href,
 }: {
-  icon: React.ReactNode
-  label: string
-  value: string
-  href?: string
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href?: string;
 }) {
   const content = (
     <div className="flex items-start gap-3 rounded-lg border border-border bg-card/50 p-4 transition-colors hover:border-primary/30">
@@ -121,15 +186,15 @@ function InfoCard({
         </p>
       </div>
     </div>
-  )
+  );
 
   if (href) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer">
         {content}
       </a>
-    )
+    );
   }
 
-  return content
+  return content;
 }
