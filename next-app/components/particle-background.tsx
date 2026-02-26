@@ -17,7 +17,7 @@ export function ParticleBackground() {
   const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number>(0);
 
-  const PARTICLE_COLOR = { r: 255, g: 217, b: 0 };
+  const PARTICLE_COLOR = { r: 240, g: 208, b: 24 };
   const SPREAD = 20;
   const SPEED = 0.1;
   const BASE_SIZE = 100;

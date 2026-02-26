@@ -66,6 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <meta name="darkreader-lock" />
+      </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
         {children}
         <Analytics />
