@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { SplitHeading } from "./split-heading";
 import { contactInfo } from "@/lib/portfolio-data";
 
@@ -82,7 +82,7 @@ export function HeroSection() {
               href={contactInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="rounded-md border border-primary/35 p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               aria-label="GitHub profile"
             >
               <Github className="h-5 w-5" />
@@ -91,10 +91,28 @@ export function HeroSection() {
               href={contactInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              className="rounded-md border border-primary/35 p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
               aria-label="LinkedIn profile"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="mailto:rupankarvitc@gmail.com"
+              className="rounded-md border border-primary/35 p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              aria-label="Send email"
+            >
+              <Mail className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.kaggle.com/rupankarmajumdar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-primary/35 p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              aria-label="Kaggle profile"
+            >
+              <span className="flex h-5 w-5 items-center justify-center text-sm font-semibold leading-none">
+                K
+              </span>
             </a>
           </motion.div>
         </div>

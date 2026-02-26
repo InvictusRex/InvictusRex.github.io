@@ -155,18 +155,6 @@ export function ContactSection() {
           </button>
         </form>
       </div>
-
-      {/* Footer */}
-      <div className="mt-20 border-t border-border pt-8">
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="font-mono text-xs text-muted-foreground">
-            Designed & built by Rupankar Majumdar
-          </p>
-          <p className="font-mono text-xs text-muted-foreground/50">
-            Robotics / UAV / Edge AI
-          </p>
-        </div>
-      </div>
     </SectionWrapper>
   );
 }

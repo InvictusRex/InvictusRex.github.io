@@ -1,26 +1,30 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface SectionWrapperProps {
-  id: string
-  children: React.ReactNode
-  className?: string
+  id: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
-export function SectionWrapper({ id, children, className }: SectionWrapperProps) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-60px" })
+export function SectionWrapper({
+  id,
+  children,
+  className,
+}: SectionWrapperProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <section
       id={id}
       ref={ref}
       className={cn(
-        "relative z-10 px-4 py-20 md:px-8 md:py-28 lg:py-32",
-        className
+        "relative z-10 px-4 py-12 md:px-8 md:py-16 lg:py-20",
+        className,
       )}
     >
       <motion.div
@@ -32,5 +36,5 @@ export function SectionWrapper({ id, children, className }: SectionWrapperProps)
         {children}
       </motion.div>
     </section>
-  )
+  );
 }
