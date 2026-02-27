@@ -124,9 +124,41 @@ const techDomains = [
       "FastAPI",
     ],
   },
+  {
+    title: "Solar Electric Vehicle",
+    technologies: [
+      "MPPT Design",
+      "Li-Ion & LiFePO4,  Batteries",
+      "Custom BMS",
+      "CAN Bus",
+      "ECU Tuning",
+      "PMSM & BLDC Motors",
+      "Telemetry",
+      "Power Electronics",
+      "Tractive System Design",
+      "Battery Cooling",
+      "Insulation & Safety",
+    ],
+  },
 ] as const;
 
 export function AboutSection() {
+  const dronesDomain = techDomains.find(
+    (domain) => domain.title === "Drones & Robotics",
+  );
+  const computerVisionDomain = techDomains.find(
+    (domain) => domain.title === "Computer Vision",
+  );
+  const machineLearningDomain = techDomains.find(
+    (domain) => domain.title === "Machine Learning",
+  );
+  const developmentDomain = techDomains.find(
+    (domain) => domain.title === "Development",
+  );
+  const solarEvDomain = techDomains.find(
+    (domain) => domain.title === "Solar Electric Vehicle",
+  );
+
   return (
     <SectionWrapper id="about">
       <SplitHeading
@@ -202,33 +234,52 @@ export function AboutSection() {
           Tech Stack
         </h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {techDomains.map((domain) => {
-            const domainTechnologies = domain.technologies;
-
-            return (
-              <div
-                key={domain.title}
-                className="rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <h4 className="mb-3 font-heading text-sm font-semibold text-foreground">
-                  {domain.title}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {domainTechnologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-md border border-border bg-secondary/50 px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
-                    >
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+          {dronesDomain && <TechDomainCard domain={dronesDomain} />}
+          {computerVisionDomain && (
+            <TechDomainCard domain={computerVisionDomain} />
+          )}
+        </div>
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {machineLearningDomain && (
+            <TechDomainCard domain={machineLearningDomain} className="h-full" />
+          )}
+          <div className="grid grid-cols-1 gap-4 sm:h-full sm:grid-rows-[auto_1fr]">
+            {developmentDomain && <TechDomainCard domain={developmentDomain} />}
+            {solarEvDomain && (
+              <TechDomainCard domain={solarEvDomain} className="h-full" />
+            )}
+          </div>
         </div>
       </div>
     </SectionWrapper>
+  );
+}
+
+function TechDomainCard({
+  domain,
+  className,
+}: {
+  domain: (typeof techDomains)[number];
+  className?: string;
+}) {
+  return (
+    <div
+      className={`rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 ${className ?? ""}`}
+    >
+      <h4 className="mb-3 font-heading text-sm font-semibold text-foreground">
+        {domain.title}
+      </h4>
+      <div className="flex flex-wrap gap-2">
+        {domain.technologies.map((technology) => (
+          <span
+            key={technology}
+            className="rounded-md border border-border bg-secondary/50 px-3 py-1.5 font-mono text-xs text-muted-foreground/90 transition-colors hover:border-primary/40 hover:text-foreground"
+          >
+            {technology}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
