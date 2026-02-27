@@ -37,7 +37,7 @@ export function HeroSection() {
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             delay={0.2}
           >
-            Rupankar Majumdar
+            {"Hi! I'm\nRupankar Majumdar"}
           </SplitHeading>
 
           <motion.p
@@ -46,10 +46,11 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
           >
-            Building autonomous machines that perceive, decide, and act. From
-            custom UAV platforms to edge-deployed vision systems, I engineer
-            solutions at the intersection of robotics, flight, and artificial
-            intelligence.
+            I engineer end-to-end autonomous systems that combine robotics,
+            aerial platforms, and computer vision. From building custom UAV
+            hardware to deploying edge AI pipelines, I focus on creating
+            practical systems that move beyond prototypes into real-world
+            deployment.
           </motion.p>
 
           <motion.div
@@ -60,10 +61,10 @@ export function HeroSection() {
           >
             <button
               onClick={() => handleScroll("projects")}
-              className="group flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
+              className="group inline-flex items-center justify-center gap-[7px] rounded-lg bg-primary pl-5 pr-[18px] py-2.5 text-center text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
             >
               View Work
-              <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              <ArrowDown className="ml-[1px] h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             </button>
             <button
               onClick={() => handleScroll("about")}
