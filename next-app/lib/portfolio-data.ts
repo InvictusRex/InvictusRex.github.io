@@ -204,20 +204,27 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    title: "Robotics Research Engineer",
-    company: "Autonomous Systems Lab, Georgia Tech",
-    period: "Jun 2024 — Present",
+    title: "UAV Research & Development Intern",
+    company: "Garuda Aerospace Limited, Chennai",
+    period: "May 2025 — July 2025",
     description:
-      "Developing autonomous navigation algorithms for UAV swarms. Implementing multi-agent SLAM and coordinated path planning using ROS 2. Published research on decentralized swarm consensus protocols.",
+      "Worked on UAV systems for defense and SAR applications, integrating computer vision modules for real-time object detection and mission-specific automation on aerial edge platforms.",
+  },
+  {
+    title: "Co-Founder & Electrical Lead",
+    company: "REVA Solar Racing, VIT Chennai",
+    period: "Feb 2024 — Present",
+    description:
+      "Led electrical architecture for a student solar vehicle, overseeing power systems, battery management, motor control, and cross-team integration for vehicle development.",
   },
   {
     title: "UAV Systems Intern",
-    company: "Skydio, Inc.",
-    period: "May 2023 — Aug 2023",
+    company: "Centur-Ion Mobility, Chennai",
+    period: "Jul 2024 — Dec 2024",
     description:
-      "Contributed to obstacle avoidance pipeline for autonomous drones. Optimized depth estimation models for edge deployment on custom ASIC. Reduced inference latency by 35% through model pruning and quantization.",
+      "Developed electrical integration for coaxial and tricopter drones, built sensor data acquisition pipelines, and designed a BLDC motor test bench for performance evaluation.",
   },
-  {
+  /*{
     title: "Embedded Systems Engineer",
     company: "RoboJackets, Georgia Tech",
     period: "Aug 2022 — May 2024",
@@ -230,23 +237,37 @@ export const experiences: Experience[] = [
     period: "Jan 2022 — May 2023",
     description:
       "Assisted in developing dexterous manipulation algorithms for bi-manual robot arms. Implemented force-torque sensor calibration and data collection pipelines for imitation learning research.",
-  },
+  },*/
 ];
 
 export const educationItems: Education[] = [
   {
-    degree: "M.S. Robotics",
-    school: "Georgia Institute of Technology",
-    period: "2024 — 2026 (Expected)",
+    degree: "B.Tech Computer Science & Engineering (AI & ML)",
+    school: "Vellore Institute of Technology, Chennai",
+    period: "2023 — 2027 (Expected)",
     description:
-      "Focus areas: Autonomous systems, perception, and aerial robotics. Research in multi-agent UAV coordination under Prof. Chen. GPA: 3.92/4.0",
+      "Pursuing a degree focused on AI, machine learning, and computer vision, applying core computer science principles to robotics, UAV systems, and real-world intelligent system development. GPA: 8.77/10.0",
   },
   {
-    degree: "B.S. Mechanical Engineering",
-    school: "Georgia Institute of Technology",
-    period: "2020 — 2024",
+    degree: "Chairperson",
+    school: "Robotics Club, VIT Chennai",
+    period: "Sep 2023 — Present",
     description:
-      "Concentration in Robotics & Automation. Dean's List all semesters. Senior thesis on VTOL transition control systems. GPA: 3.88/4.0",
+      "Led ML and robotics initiatives, conducted workshops on TensorFlow, YOLO, and MediaPipe, mentored projects, and organized hackathons across robotics, drones, and automation.",
+  },
+  {
+    degree: "Projects Department Lead",
+    school: "IEEE Robotics & Automation Society, VIT Chennai",
+    period: "Feb 2024 — Present",
+    description:
+      "Directed robotics and automation projects, represented the chapter at competitions and expos, and led teams building innovative systems across multiple robotics domains.",
+  },
+  {
+    degree: "Technical Member",
+    school: "Linux Users' Group, VIT Chennai",
+    period: "Dec 2024 — Present",
+    description:
+      "Organized workshops on Linux, cybersecurity, and open-source tools, led CTF initiatives, and collaborated with FOSS communities to run large technical events.",
   },
 ];
 

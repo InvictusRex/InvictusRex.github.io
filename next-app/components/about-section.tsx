@@ -170,13 +170,13 @@ export function AboutSection() {
 
       <div className="mb-12 max-w-3xl">
         <p className="text-base leading-relaxed text-muted-foreground">
-          I am a robotics engineer and researcher with a deep focus on
-          autonomous aerial systems and edge-deployed machine intelligence. My
-          work spans the full stack of robotics — from mechanical design and
-          embedded firmware to computer vision and real-time inference on
-          resource-constrained hardware. I believe the future of robotics lies
-          at the intersection of capable hardware and intelligent software, and
-          I build systems that bridge that gap.
+          I am a Computer Science engineer specializing in AI and ML, with a
+          strong focus on drones, robotics, and computer vision. I build
+          intelligent systems that enable autonomous perception and
+          decision-making, developing vision pipelines and edge AI solutions for
+          real-world deployment. My work centers on translating machine learning
+          into practical UAV and robotic autonomy, building deployable systems
+          that operate reliably in complex real-world environments.
         </p>
       </div>
 
