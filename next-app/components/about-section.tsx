@@ -84,7 +84,7 @@ export function AboutSection() {
         <InfoCard
           icon={<GraduationCap className="h-4 w-4" />}
           label="Education"
-          value="M.S. Robotics, Georgia Tech"
+          value="B.Tech CSE AI & ML, VIT Chennai"
         />
         <InfoCard
           icon={<Mail className="h-4 w-4" />}
@@ -100,7 +100,7 @@ export function AboutSection() {
         <InfoCard
           icon={<Github className="h-4 w-4" />}
           label="GitHub"
-          value="arjunmehta"
+          value="InvictusRex"
           href={contactInfo.github}
         />
       </div>

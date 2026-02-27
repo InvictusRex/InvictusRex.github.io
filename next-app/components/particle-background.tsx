@@ -18,16 +18,16 @@ export function ParticleBackground() {
   const animationRef = useRef<number>(0);
 
   const PARTICLE_COLOR = { r: 240, g: 208, b: 24 };
-  const SPREAD = 20;
-  const SPEED = 0.1;
+  const SPREAD = 16;
+  const SPEED = 0.06;
   const BASE_SIZE = 100;
   const PIXEL_RATIO = 1;
 
   const initParticles = useCallback(
     (width: number, height: number) => {
-      const count = Math.floor((width * height) / (BASE_SIZE * SPREAD * 12));
+      const count = Math.floor((width * height) / (BASE_SIZE * SPREAD * 5));
       const particles: Particle[] = [];
-      for (let i = 0; i < Math.min(count, 600); i++) {
+      for (let i = 0; i < Math.min(count, 1400); i++) {
         const size = Math.random() * 1.8 + 0.4;
         particles.push({
           x: Math.random() * width,
@@ -74,10 +74,10 @@ export function ParticleBackground() {
         const dx = mouseRef.current.x - p.x;
         const dy = mouseRef.current.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = 180;
+        const maxDist = 120;
 
         if (dist < maxDist) {
-          const force = (1 - dist / maxDist) * 0.3;
+          const force = (1 - dist / maxDist) * 0.16;
           p.vx -= (dx / dist) * force;
           p.vy -= (dy / dist) * force;
           p.size = p.baseSize * (1 + (1 - dist / maxDist) * 1.5);

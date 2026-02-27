@@ -1,33 +1,33 @@
 export interface Project {
-  id: string
-  title: string
-  category: string
-  description: string
-  longDescription: string
-  technologies: string[]
-  image: string
-  year: string
-  highlights: string[]
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  longDescription: string;
+  technologies: string[];
+  image: string;
+  year: string;
+  highlights: string[];
 }
 
 export interface Experience {
-  title: string
-  company: string
-  period: string
-  description: string
+  title: string;
+  company: string;
+  period: string;
+  description: string;
 }
 
 export interface Education {
-  degree: string
-  school: string
-  period: string
-  description: string
+  degree: string;
+  school: string;
+  period: string;
+  description: string;
 }
 
 export interface GalleryImage {
-  src: string
-  alt: string
-  caption: string
+  src: string;
+  alt: string;
+  caption: string;
 }
 
 export const categories = [
@@ -37,7 +37,7 @@ export const categories = [
   "Machine Learning",
   "Combat Robotics",
   "Solar Electric Vehicle",
-] as const
+] as const;
 
 export const projects: Project[] = [
   {
@@ -200,7 +200,7 @@ export const projects: Project[] = [
       "Real-time telemetry system",
     ],
   },
-]
+];
 
 export const experiences: Experience[] = [
   {
@@ -231,7 +231,7 @@ export const experiences: Experience[] = [
     description:
       "Assisted in developing dexterous manipulation algorithms for bi-manual robot arms. Implemented force-torque sensor calibration and data collection pipelines for imitation learning research.",
   },
-]
+];
 
 export const educationItems: Education[] = [
   {
@@ -248,7 +248,7 @@ export const educationItems: Education[] = [
     description:
       "Concentration in Robotics & Automation. Dean's List all semesters. Senior thesis on VTOL transition control systems. GPA: 3.88/4.0",
   },
-]
+];
 
 export const techStack = [
   "Python",
@@ -273,7 +273,9 @@ export const techStack = [
   "Embedded C",
   "FreeRTOS",
   "CAN Bus",
-]
+  "ROS 2",
+  "YOLO",
+];
 
 export const galleryImages: GalleryImage[] = [
   {
@@ -306,11 +308,11 @@ export const galleryImages: GalleryImage[] = [
     alt: "Custom PCB assembly close-up",
     caption: "Custom flight controller PCB — Soldering session",
   },
-]
+];
 
 export const contactInfo = {
-  email: "arjun.mehta@gatech.edu",
-  location: "Atlanta, GA",
-  github: "https://github.com/arjunmehta",
-  linkedin: "https://linkedin.com/in/arjunmehta-robotics",
-}
+  email: "rupankarvitc@gmail.com",
+  location: "Chennai, TN",
+  github: "https://github.com/InvictusRex",
+  linkedin: "https://linkedin.com/in/rupankar-majumdar",
+};

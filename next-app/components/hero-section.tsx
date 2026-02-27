@@ -27,7 +27,7 @@ export function HeroSection() {
             className="mb-4"
           >
             <span className="inline-block rounded-full border border-border bg-secondary/60 px-3 py-1 font-mono text-xs tracking-wider text-muted-foreground">
-              Robotics / UAV / Edge AI
+              Robotics / UAV / Computer Vision / Edge AI
             </span>
           </motion.div>
 
