@@ -123,7 +123,7 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative shrink-0"
+          className="relative shrink-0 md:-translate-x-4 lg:-translate-x-6"
         >
           <ElectricBorder
             color="#f0d018"
@@ -134,7 +134,7 @@ export function HeroSection() {
             borderRadius={16}
             gap={8}
           >
-            <div className="relative aspect-[1060/1280] w-56 overflow-hidden rounded-2xl border border-border/60 md:w-72 lg:w-80">
+            <div className="relative aspect-[1060/1280] w-64 overflow-hidden rounded-2xl border border-border/60 md:w-80 lg:w-96">
               <Image
                 src="/images/profile.jpg"
                 alt="Rupankar Majumdar - Robotics & UAV Engineer"
@@ -144,7 +144,7 @@ export function HeroSection() {
               />
             </div>
           </ElectricBorder>
-          <div className="absolute -bottom-2 -right-2 aspect-[1060/1280] w-56 rounded-2xl border border-primary/20 md:w-72 lg:w-80" />
+          <div className="absolute -bottom-3 -right-3 aspect-[1060/1280] w-64 rounded-2xl border border-primary/20 md:w-80 lg:w-96" />
         </motion.div>
       </div>
     </section>

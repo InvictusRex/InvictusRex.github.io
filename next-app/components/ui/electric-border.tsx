@@ -253,9 +253,10 @@ export default function ElectricBorder({
     const borderOffset = 60;
 
     const updateSize = () => {
-      const rect = container.getBoundingClientRect();
-      const width = rect.width + borderOffset * 2;
-      const height = rect.height + borderOffset * 2;
+      const baseWidth = container.offsetWidth;
+      const baseHeight = container.offsetHeight;
+      const width = baseWidth + borderOffset * 2;
+      const height = baseHeight + borderOffset * 2;
 
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = width * dpr;
