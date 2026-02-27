@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { SplitHeading } from "./split-heading";
 import { contactInfo } from "@/lib/portfolio-data";
+import ElectricBorder from "./ui/electric-border";
 
 export function HeroSection() {
   const handleScroll = (href: string) => {
@@ -124,15 +125,25 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="relative shrink-0"
         >
-          <div className="relative aspect-[1060/1280] w-56 overflow-hidden rounded-2xl border border-border/60 md:w-72 lg:w-80">
-            <Image
-              src="/images/profile.jpg"
-              alt="Rupankar Majumdar - Robotics & UAV Engineer"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <ElectricBorder
+            color="#f0d018"
+            speed={1}
+            chaos={0.18}
+            arcThickness={2.5}
+            thickness={2}
+            borderRadius={16}
+            gap={8}
+          >
+            <div className="relative aspect-[1060/1280] w-56 overflow-hidden rounded-2xl border border-border/60 md:w-72 lg:w-80">
+              <Image
+                src="/images/profile.jpg"
+                alt="Rupankar Majumdar - Robotics & UAV Engineer"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </ElectricBorder>
           <div className="absolute -bottom-2 -right-2 aspect-[1060/1280] w-56 rounded-2xl border border-primary/20 md:w-72 lg:w-80" />
         </motion.div>
       </div>
