@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { SplitHeading } from "./split-heading";
-import { contactInfo } from "@/lib/portfolio-data";
+import { contactInfo } from "../lib/portfolio-data";
 import ElectricBorder from "./ui/electric-border";
 
 export function HeroSection() {

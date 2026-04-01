@@ -11,8 +11,8 @@ import {
   categories,
   defaultDisplayProjects,
   hiddenDisplayProjects,
-} from "@/lib/portfolio-data";
-import type { Project } from "@/lib/portfolio-data";
+} from "../lib/portfolio-data";
+import type { Project } from "../lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {

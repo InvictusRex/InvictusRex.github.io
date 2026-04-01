@@ -3,7 +3,11 @@
 import { SectionWrapper } from "./section-wrapper";
 import { SplitHeading } from "./split-heading";
 import { Timeline, mapExperience, mapEducation } from "./timeline";
-import { experiences, educationItems, contactInfo } from "@/lib/portfolio-data";
+import {
+  experiences,
+  educationItems,
+  contactInfo,
+} from "../lib/portfolio-data";
 import { Mail, MapPin, Github, Linkedin, GraduationCap } from "lucide-react";
 
 const techDomains = [
