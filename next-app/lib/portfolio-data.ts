@@ -27,8 +27,6 @@ export interface Education {
 
 export interface GalleryImage {
   src: string;
-  alt: string;
-  caption: string;
 }
 
 export const categories = [
@@ -464,34 +462,49 @@ export const techStack = [
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: "/images/gallery/competition-1.jpg",
-    alt: "Robotics competition event",
-    caption: "RoboJackets competition at Georgia Tech - 2024",
+    src: "/images/gallery/5.jpeg",
   },
   {
-    src: "/images/gallery/workshop-1.jpg",
-    alt: "Engineering workshop",
-    caption: "Electronics lab workspace - Custom PCB assembly",
+    src: "/images/gallery/1.jpeg",
   },
   {
-    src: "/images/gallery/drone-flight.jpg",
-    alt: "UAV test flight at sunset",
-    caption: "Atlas VTOL maiden flight test - Griffin, GA",
+    src: "/images/gallery/4.jpeg",
   },
   {
-    src: "/images/gallery/team-photo.jpg",
-    alt: "Engineering team photo",
-    caption: "Autonomous Systems Lab team - Fall 2024",
+    src: "/images/gallery/9.jpeg",
   },
   {
-    src: "/images/gallery/presentation.jpg",
-    alt: "Technical presentation at conference",
-    caption: "IEEE ICRA poster presentation - 2024",
+    src: "/images/gallery/47.jpeg",
   },
   {
-    src: "/images/gallery/pcb-design.jpg",
-    alt: "Custom PCB assembly close-up",
-    caption: "Custom flight controller PCB - Soldering session",
+    src: "/images/gallery/15.jpeg",
+  },
+  {
+    src: "/images/gallery/10.jpeg",
+  },
+  {
+    src: "/images/gallery/8.jpeg",
+  },
+  {
+    src: "/images/gallery/17.jpeg",
+  },
+  {
+    src: "/images/gallery/12.jpeg",
+  },
+  {
+    src: "/images/gallery/11.jpeg",
+  },
+  {
+    src: "/images/gallery/20.jpeg",
+  },
+  {
+    src: "/images/gallery/13.jpeg",
+  },
+  {
+    src: "/images/gallery/21.jpeg",
+  },
+  {
+    src: "/images/gallery/14.jpeg",
   },
 ];
 

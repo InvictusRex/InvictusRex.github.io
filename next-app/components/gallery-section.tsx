@@ -1,30 +1,38 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { SectionWrapper } from "./section-wrapper"
-import { SplitHeading } from "./split-heading"
-import { ImageLightbox } from "./image-lightbox"
-import { galleryImages } from "@/lib/portfolio-data"
-import { Expand } from "lucide-react"
+import { useState, useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { SectionWrapper } from "./section-wrapper";
+import { SplitHeading } from "./split-heading";
+import { ImageLightbox } from "./image-lightbox";
+import { galleryImages } from "@/lib/portfolio-data";
+import { Expand } from "lucide-react";
 
 export function GallerySection() {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
+
+  const initialPhotoCount = 6;
+  const displayImages = showAllPhotos
+    ? galleryImages
+    : galleryImages.slice(0, initialPhotoCount);
+  const hasMorePhotos =
+    galleryImages.length > initialPhotoCount && !showAllPhotos;
 
   const handleNext = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex + 1) % galleryImages.length)
+      setLightboxIndex((lightboxIndex + 1) % galleryImages.length);
     }
-  }
+  };
 
   const handlePrev = () => {
     if (lightboxIndex !== null) {
       setLightboxIndex(
-        (lightboxIndex - 1 + galleryImages.length) % galleryImages.length
-      )
+        (lightboxIndex - 1 + galleryImages.length) % galleryImages.length,
+      );
     }
-  }
+  };
 
   return (
     <SectionWrapper id="gallery">
@@ -39,9 +47,9 @@ export function GallerySection() {
         process behind the projects.
       </p>
 
-      {/* Masonry-style grid */}
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {galleryImages.map((image, index) => (
+      {/* Masonry-style dense grid */}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 [grid-auto-rows:10px] grid-flow-dense">
+        {displayImages.map((image, index) => (
           <GalleryCard
             key={index}
             image={image}
@@ -51,6 +59,17 @@ export function GallerySection() {
         ))}
       </div>
 
+      {hasMorePhotos && (
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={() => setShowAllPhotos(true)}
+            className="inline-flex items-center justify-center rounded-lg border border-primary/30 bg-primary/5 px-6 py-2.5 text-center font-medium text-primary transition-all hover:border-primary/50 hover:bg-primary/10"
+          >
+            View More Photos
+          </button>
+        </div>
+      )}
+
       <ImageLightbox
         images={galleryImages}
         currentIndex={lightboxIndex}
@@ -59,7 +78,7 @@ export function GallerySection() {
         onPrev={handlePrev}
       />
     </SectionWrapper>
-  )
+  );
 }
 
 function GalleryCard({
@@ -67,12 +86,19 @@ function GalleryCard({
   index,
   onClick,
 }: {
-  image: { src: string; alt: string; caption: string }
-  index: number
-  onClick: () => void
+  image: { src: string };
+  index: number;
+  onClick: () => void;
 }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-30px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-30px" });
+  const [rowSpan, setRowSpan] = useState(22);
+
+  const updateSpan = (naturalWidth: number, naturalHeight: number) => {
+    const ratio = naturalHeight / naturalWidth;
+    const nextSpan = Math.round(10 + ratio * 10);
+    setRowSpan(Math.max(14, Math.min(nextSpan, 26)));
+  };
 
   return (
     <motion.button
@@ -81,24 +107,27 @@ function GalleryCard({
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.06 }}
       onClick={onClick}
-      className="group relative aspect-[3/2] overflow-hidden rounded-lg border border-border text-left transition-all hover:border-primary/30"
+      style={{ gridRowEnd: `span ${rowSpan}` }}
+      className="group relative w-full overflow-hidden rounded-lg border border-border text-left transition-all hover:border-primary/30"
     >
       <Image
         src={image.src}
-        alt={image.alt}
+        alt="Gallery image"
         fill
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        onLoadingComplete={({ naturalWidth, naturalHeight }) => {
+          updateSpan(naturalWidth, naturalHeight);
+        }}
+        className="object-cover transition-transform duration-500 group-hover:scale-[1.01]"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-      {/* Caption & icon */}
-      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <p className="text-xs text-foreground/90">{image.caption}</p>
+      {/* Icon */}
+      <div className="absolute inset-x-0 bottom-0 flex items-end justify-end p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <Expand className="h-4 w-4 shrink-0 text-primary" />
       </div>
     </motion.button>
-  )
+  );
 }
