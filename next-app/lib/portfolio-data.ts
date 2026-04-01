@@ -61,7 +61,7 @@ export const projects: Project[] = [
       "ROS 2",
       "YOLO",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/SentinelBlue.jpg",
     year: "2026",
     highlights: [
       "Real-time RGB and thermal fusion onboard UAV",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
       "CUDA",
       "ROS 2",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Recon.jpg",
     year: "2025",
     highlights: [
       "Detection of tanks, armored vehicles, and personnel",
@@ -117,7 +117,7 @@ export const projects: Project[] = [
       "ArduPilot",
       "PX4",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/MSAR.jpg",
     year: "2026",
     highlights: [
       "Real-time swimmer detection on UAV edge hardware",
@@ -145,7 +145,7 @@ export const projects: Project[] = [
       "Docker",
       "Git",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Pose.jpg",
     year: "2025",
     highlights: [
       "Real-time fall and unsafe behavior detection",
@@ -173,7 +173,7 @@ export const projects: Project[] = [
       "Simulink",
       "Git",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Defect.jpg",
     year: "2025",
     highlights: [
       "Visual + acoustic multimodal fusion pipeline",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
       "Linux",
       "Git",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Breast.jpg",
     year: "2024",
     highlights: [
       "Supervised vs self-supervised performance comparison",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
       "IoT",
       "Java",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Home.jpg",
     year: "2025",
     highlights: [
       "Real-time gesture control with MediaPipe",
@@ -257,7 +257,7 @@ export const projects: Project[] = [
       "ROS 2",
       "Jetson",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Insects.jpg",
     year: "2026",
     highlights: [
       "YOLO-based real-time pest detection from UAV",
@@ -285,7 +285,7 @@ export const projects: Project[] = [
       "Embedded Systems",
       "Git",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/FC.jpg",
     year: "2025",
     highlights: [
       "Complete Arduino Uno flight controller implementation",
@@ -313,7 +313,7 @@ export const projects: Project[] = [
       "Management System",
       "Git",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Curanet.jpg",
     year: "2024",
     highlights: [
       "Pure HTML/CSS/JavaScript implementation",
@@ -341,7 +341,7 @@ export const projects: Project[] = [
       "Mechanical Design",
       "Embedded Systems",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Spinner.jpg",
     year: "2024",
     highlights: [
       "High-speed rotating disc weapon system",
@@ -369,7 +369,7 @@ export const projects: Project[] = [
       "Combat Strategy",
       "Embedded Systems",
     ],
-    image: "/images/projects/drone-1.jpg",
+    image: "/images/projects/Wedge.jpg",
     year: "2024",
     highlights: [
       "Low-profile wedge geometry optimization",
