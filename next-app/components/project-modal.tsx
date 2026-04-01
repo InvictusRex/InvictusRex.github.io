@@ -1,34 +1,34 @@
-"use client"
+"use client";
 
-import { useEffect, useCallback } from "react"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
-import { X, ExternalLink } from "lucide-react"
-import type { Project } from "@/lib/portfolio-data"
+import { useEffect, useCallback } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ExternalLink } from "lucide-react";
+import type { Project } from "@/lib/portfolio-data";
 
 interface ProjectModalProps {
-  project: Project | null
-  onClose: () => void
+  project: Project | null;
+  onClose: () => void;
 }
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose()
+      if (e.key === "Escape") onClose();
     },
-    [onClose]
-  )
+    [onClose],
+  );
 
   useEffect(() => {
     if (project) {
-      document.body.style.overflow = "hidden"
-      document.addEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = ""
-      document.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [project, handleKeyDown])
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [project, handleKeyDown]);
 
   return (
     <AnimatePresence>
@@ -91,6 +91,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {project.title}
               </h3>
 
+              {project.githubUrl && (
+                <div className="mt-3">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-primary/30 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
+                  >
+                    View on GitHub
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              )}
+
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {project.longDescription}
               </p>
@@ -134,5 +148,5 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

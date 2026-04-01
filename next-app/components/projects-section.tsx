@@ -1,24 +1,49 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { SectionWrapper } from "./section-wrapper"
-import { SplitHeading } from "./split-heading"
-import { ProjectModal } from "./project-modal"
-import { projects, categories } from "@/lib/portfolio-data"
-import type { Project } from "@/lib/portfolio-data"
-import { cn } from "@/lib/utils"
-import { ArrowUpRight } from "lucide-react"
+import { useState, useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { SectionWrapper } from "./section-wrapper";
+import { SplitHeading } from "./split-heading";
+import { ProjectModal } from "./project-modal";
+import {
+  projects,
+  categories,
+  defaultDisplayProjects,
+  hiddenDisplayProjects,
+} from "@/lib/portfolio-data";
+import type { Project } from "@/lib/portfolio-data";
+import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState<string>("All")
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
+  // Get default projects (first 6)
+  const defaultProjects = defaultDisplayProjects.map((idx) => projects[idx]);
+
+  // Get hidden projects (other 6) in specified order
+  const hiddenProjects = hiddenDisplayProjects.map((idx) => projects[idx]);
+
+  // Display logic based on category and view state
+  let displayProjects: Project[] = [];
+  if (activeCategory !== "All") {
+    // If category filter is active, show all projects in that category
+    displayProjects = projects.filter((p) => p.category === activeCategory);
+  } else if (showAllProjects) {
+    // If showing all, display default projects first, then hidden projects
+    displayProjects = [...defaultProjects, ...hiddenProjects];
+  } else {
+    // Default view: show only first 6 projects
+    displayProjects = defaultProjects;
+  }
+
+  const hasMoreProjects = activeCategory === "All" && !showAllProjects;
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((p) => p.category === activeCategory)
+      : projects.filter((p) => p.category === activeCategory);
 
   return (
     <SectionWrapper id="projects">
@@ -30,7 +55,8 @@ export function ProjectsSection() {
       </SplitHeading>
       <p className="mb-8 max-w-2xl text-base text-muted-foreground">
         A selection of engineering projects spanning aerial vehicles, robotics,
-        machine learning, and more. Each represents a full design-build-test cycle.
+        machine learning, and more. Each represents a full design-build-test
+        cycle.
       </p>
 
       {/* Category filter */}
@@ -43,7 +69,7 @@ export function ProjectsSection() {
               "rounded-md px-3 py-1.5 text-xs font-medium transition-all",
               activeCategory === cat
                 ? "bg-primary text-primary-foreground"
-                : "border border-border bg-secondary/40 text-muted-foreground hover:border-primary/30 hover:text-foreground"
+                : "border border-border bg-secondary/40 text-muted-foreground hover:border-primary/30 hover:text-foreground",
             )}
           >
             {cat}
@@ -53,7 +79,7 @@ export function ProjectsSection() {
 
       {/* Project grid (Chroma Grid style) */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project, index) => (
+        {displayProjects.map((project, index) => (
           <ProjectCard
             key={project.id}
             project={project}
@@ -63,12 +89,24 @@ export function ProjectsSection() {
         ))}
       </div>
 
+      {/* View More Projects Button */}
+      {hasMoreProjects && (
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={() => setShowAllProjects(true)}
+            className="inline-flex items-center justify-center rounded-lg border border-primary/30 bg-primary/5 px-6 py-2.5 text-center font-medium text-primary transition-all hover:border-primary/50 hover:bg-primary/10"
+          >
+            View More Projects
+          </button>
+        </div>
+      )}
+
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
     </SectionWrapper>
-  )
+  );
 }
 
 function ProjectCard({
@@ -76,12 +114,12 @@ function ProjectCard({
   index,
   onClick,
 }: {
-  project: Project
-  index: number
-  onClick: () => void
+  project: Project;
+  index: number;
+  onClick: () => void;
 }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-40px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
     <motion.button
@@ -103,9 +141,7 @@ function ProjectCard({
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
 
         {/* Hover indicator */}
-        <div className="absolute right-3 top-3 rounded-md bg-background/70 p-1.5 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
-          <ArrowUpRight className="h-3.5 w-3.5 text-primary" />
-        </div>
+        <div className="absolute right-3 top-3 rounded-full bg-primary/70 p-1 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100" />
       </div>
 
       {/* Content */}
@@ -141,5 +177,5 @@ function ProjectCard({
         </div>
       </div>
     </motion.button>
-  )
+  );
 }
