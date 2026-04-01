@@ -20,9 +20,9 @@ const _spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Rupankar Majumdar | Robotics & UAV Engineer",
+  title: "Rupankar Majumdar | Robotics & Machine Learning Engineer",
   description:
-    "Portfolio of Rupankar Majumdar — Robotics, UAV, and Edge AI engineer specializing in autonomous systems, drone design, and intelligent machines.",
+    "Portfolio of Rupankar Majumdar - Robotics, UAV, and Edge AI engineer specializing in autonomous systems, drone design, and intelligent machines.",
   generator: "Next.js",
   keywords: [
     "robotics",
@@ -36,19 +36,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/favicon.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/favicon.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/favicon.png",
+        type: "image/x-icon",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/favicon.png",
   },
 };
 

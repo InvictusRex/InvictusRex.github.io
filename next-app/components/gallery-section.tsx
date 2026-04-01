@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { SectionWrapper } from "./section-wrapper";
 import { SplitHeading } from "./split-heading";
 import { ImageLightbox } from "./image-lightbox";
-import { galleryImages } from "@/lib/portfolio-data";
+import { galleryImages } from "../lib/portfolio-data";
 import { Expand } from "lucide-react";
 
 export function GallerySection() {
