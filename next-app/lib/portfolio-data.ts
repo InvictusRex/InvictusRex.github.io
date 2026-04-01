@@ -89,7 +89,7 @@ export const projects: Project[] = [
       "CUDA",
       "ROS 2",
     ],
-    image: "/images/projects/Recon.jpg",
+    image: "/images/projects/Recon2.jpg",
     year: "2025",
     highlights: [
       "Detection of tanks, armored vehicles, and personnel",
