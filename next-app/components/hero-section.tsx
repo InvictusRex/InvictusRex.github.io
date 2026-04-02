@@ -137,7 +137,7 @@ export function HeroSection() {
           >
             <div className="relative aspect-[1060/1280] w-64 overflow-hidden rounded-2xl border border-border/60 md:w-80 lg:w-96">
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile.webp"
                 alt="Rupankar Majumdar - Robotics & UAV Engineer"
                 fill
                 className="object-cover"

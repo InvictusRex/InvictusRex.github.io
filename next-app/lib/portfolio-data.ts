@@ -59,7 +59,7 @@ export const projects: Project[] = [
       "ROS 2",
       "YOLO",
     ],
-    image: "/images/projects/SentinelBlue.jpg",
+    image: "/images/projects/SentinelBlue\.webp",
     year: "2026",
     highlights: [
       "Real-time RGB and thermal fusion onboard UAV",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
       "CUDA",
       "ROS 2",
     ],
-    image: "/images/projects/Recon2.jpg",
+    image: "/images/projects/Recon2\.webp",
     year: "2025",
     highlights: [
       "Detection of tanks, armored vehicles, and personnel",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
       "ArduPilot",
       "PX4",
     ],
-    image: "/images/projects/MSAR.jpg",
+    image: "/images/projects/MSAR\.webp",
     year: "2026",
     highlights: [
       "Real-time swimmer detection on UAV edge hardware",
@@ -143,7 +143,7 @@ export const projects: Project[] = [
       "Docker",
       "Git",
     ],
-    image: "/images/projects/Pose.jpg",
+    image: "/images/projects/Pose\.webp",
     year: "2025",
     highlights: [
       "Real-time fall and unsafe behavior detection",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       "Simulink",
       "Git",
     ],
-    image: "/images/projects/Defect.jpg",
+    image: "/images/projects/Defect\.webp",
     year: "2025",
     highlights: [
       "Visual + acoustic multimodal fusion pipeline",
@@ -199,7 +199,7 @@ export const projects: Project[] = [
       "Linux",
       "Git",
     ],
-    image: "/images/projects/Breast.jpg",
+    image: "/images/projects/Breast\.webp",
     year: "2024",
     highlights: [
       "Supervised vs self-supervised performance comparison",
@@ -227,7 +227,7 @@ export const projects: Project[] = [
       "IoT",
       "Java",
     ],
-    image: "/images/projects/Home.jpg",
+    image: "/images/projects/Home\.webp",
     year: "2025",
     highlights: [
       "Real-time gesture control with MediaPipe",
@@ -255,7 +255,7 @@ export const projects: Project[] = [
       "ROS 2",
       "Jetson",
     ],
-    image: "/images/projects/Insects.jpg",
+    image: "/images/projects/Insects\.webp",
     year: "2026",
     highlights: [
       "YOLO-based real-time pest detection from UAV",
@@ -283,7 +283,7 @@ export const projects: Project[] = [
       "Embedded Systems",
       "Git",
     ],
-    image: "/images/projects/FC.jpg",
+    image: "/images/projects/FC\.webp",
     year: "2025",
     highlights: [
       "Complete Arduino Uno flight controller implementation",
@@ -311,7 +311,7 @@ export const projects: Project[] = [
       "Management System",
       "Git",
     ],
-    image: "/images/projects/Curanet.jpg",
+    image: "/images/projects/Curanet\.webp",
     year: "2024",
     highlights: [
       "Pure HTML/CSS/JavaScript implementation",
@@ -339,7 +339,7 @@ export const projects: Project[] = [
       "Mechanical Design",
       "Embedded Systems",
     ],
-    image: "/images/projects/Spinner.jpg",
+    image: "/images/projects/Spinner\.webp",
     year: "2024",
     highlights: [
       "High-speed rotating disc weapon system",
@@ -367,7 +367,7 @@ export const projects: Project[] = [
       "Combat Strategy",
       "Embedded Systems",
     ],
-    image: "/images/projects/Wedge.jpg",
+    image: "/images/projects/Wedge\.webp",
     year: "2024",
     highlights: [
       "Low-profile wedge geometry optimization",
@@ -462,49 +462,49 @@ export const techStack = [
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: "/images/gallery/5.jpeg",
+    src: "/images/gallery/5\.webp",
   },
   {
-    src: "/images/gallery/1.jpeg",
+    src: "/images/gallery/1\.webp",
   },
   {
-    src: "/images/gallery/4.jpeg",
+    src: "/images/gallery/4\.webp",
   },
   {
-    src: "/images/gallery/9.jpeg",
+    src: "/images/gallery/9\.webp",
   },
   {
-    src: "/images/gallery/47.jpeg",
+    src: "/images/gallery/47\.webp",
   },
   {
-    src: "/images/gallery/15.jpeg",
+    src: "/images/gallery/15\.webp",
   },
   {
-    src: "/images/gallery/10.jpeg",
+    src: "/images/gallery/10\.webp",
   },
   {
-    src: "/images/gallery/8.jpeg",
+    src: "/images/gallery/8\.webp",
   },
   {
-    src: "/images/gallery/17.jpeg",
+    src: "/images/gallery/17\.webp",
   },
   {
-    src: "/images/gallery/12.jpeg",
+    src: "/images/gallery/12\.webp",
   },
   {
-    src: "/images/gallery/11.jpeg",
+    src: "/images/gallery/11\.webp",
   },
   {
-    src: "/images/gallery/20.jpeg",
+    src: "/images/gallery/20\.webp",
   },
   {
-    src: "/images/gallery/13.jpeg",
+    src: "/images/gallery/13\.webp",
   },
   {
-    src: "/images/gallery/21.jpeg",
+    src: "/images/gallery/21\.webp",
   },
   {
-    src: "/images/gallery/14.jpeg",
+    src: "/images/gallery/14\.webp",
   },
 ];
 
@@ -514,3 +514,4 @@ export const contactInfo = {
   github: "https://github.com/InvictusRex",
   linkedin: "https://linkedin.com/in/rupankar-majumdar",
 };
+
