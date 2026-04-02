@@ -7,6 +7,10 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
+import {
+  getWasmEffects,
+  type WasmEffectsExports,
+} from "../../lib/wasm-effects";
 
 function hexToRgba(hex: string, alpha = 1) {
   if (!hex) return `rgba(0,0,0,${alpha})`;
@@ -54,6 +58,8 @@ export default function ElectricBorder({
   const animationRef = useRef<number | null>(null);
   const timeRef = useRef(0);
   const lastFrameTimeRef = useRef(0);
+  const wasmRef = useRef<WasmEffectsExports | null>(null);
+  const wasmPointsRef = useRef<Float32Array | null>(null);
 
   const random = useCallback((x: number) => {
     return (Math.sin(x * 12.9898) * 43758.5453) % 1;
@@ -271,6 +277,13 @@ export default function ElectricBorder({
 
     let { width, height } = updateSize();
 
+    let cancelled = false;
+
+    getWasmEffects().then((wasm) => {
+      if (cancelled || !wasm) return;
+      wasmRef.current = wasm;
+    });
+
     const drawElectricBorder = (currentTime: number) => {
       if (!canvas || !ctx) return;
 
@@ -302,48 +315,96 @@ export default function ElectricBorder({
 
       ctx.beginPath();
 
-      for (let i = 0; i <= sampleCount; i++) {
-        const progress = i / sampleCount;
-
-        const point = getRoundedRectPoint(
-          progress,
+      const wasm = wasmRef.current;
+      if (wasm) {
+        const pointCount = wasm.computeElectricPoints(
+          sampleCount,
           left,
           top,
           borderWidth,
           borderHeight,
           radius,
-        );
-
-        const xNoise = octavedNoise(
-          progress * 8,
+          timeRef.current,
           octaves,
           lacunarity,
           gain,
           amplitude,
           frequency,
-          timeRef.current,
-          0,
           baseFlatness,
-        );
-        const yNoise = octavedNoise(
-          progress * 8,
-          octaves,
-          lacunarity,
-          gain,
-          amplitude,
-          frequency,
-          timeRef.current,
-          1,
-          baseFlatness,
+          scale,
         );
 
-        const displacedX = point.x + xNoise * scale;
-        const displacedY = point.y + yNoise * scale;
+        const ptr = wasm.electricPointDataPtr();
+        const expectedLength = pointCount * 2;
 
-        if (i === 0) {
-          ctx.moveTo(displacedX, displacedY);
-        } else {
-          ctx.lineTo(displacedX, displacedY);
+        if (
+          !wasmPointsRef.current ||
+          wasmPointsRef.current.length !== expectedLength ||
+          wasmPointsRef.current.buffer !== wasm.memory.buffer
+        ) {
+          wasmPointsRef.current = new Float32Array(
+            wasm.memory.buffer,
+            ptr,
+            expectedLength,
+          );
+        }
+
+        const points = wasmPointsRef.current;
+        if (points) {
+          for (let i = 0; i < pointCount; i++) {
+            const x = points[i * 2];
+            const y = points[i * 2 + 1];
+            if (i === 0) {
+              ctx.moveTo(x, y);
+            } else {
+              ctx.lineTo(x, y);
+            }
+          }
+        }
+      } else {
+        for (let i = 0; i <= sampleCount; i++) {
+          const progress = i / sampleCount;
+
+          const point = getRoundedRectPoint(
+            progress,
+            left,
+            top,
+            borderWidth,
+            borderHeight,
+            radius,
+          );
+
+          const xNoise = octavedNoise(
+            progress * 8,
+            octaves,
+            lacunarity,
+            gain,
+            amplitude,
+            frequency,
+            timeRef.current,
+            0,
+            baseFlatness,
+          );
+          const yNoise = octavedNoise(
+            progress * 8,
+            octaves,
+            lacunarity,
+            gain,
+            amplitude,
+            frequency,
+            timeRef.current,
+            1,
+            baseFlatness,
+          );
+
+          const displacedX = point.x + xNoise * scale;
+          const displacedY = point.y + yNoise * scale;
+
+          if (i === 0) {
+            ctx.moveTo(displacedX, displacedY);
+          } else {
+            ctx.lineTo(displacedX, displacedY);
+          }
         }
       }
 
@@ -363,6 +424,7 @@ export default function ElectricBorder({
     animationRef.current = requestAnimationFrame(drawElectricBorder);
 
     return () => {
+      cancelled = true;
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
