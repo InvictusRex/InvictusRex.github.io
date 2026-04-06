@@ -72,7 +72,7 @@ export function Footer() {
           </h4>
           <div className="mt-3 flex items-start gap-4">
             <a
-              href="https://github.com/arjunmehta"
+              href="https://github.com/InvictusRex"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-primary"
@@ -84,7 +84,7 @@ export function Footer() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/arjunmehta-robotics"
+              href="https://www.linkedin.com/in/rupankar-majumdar-aa8246278/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-primary"
