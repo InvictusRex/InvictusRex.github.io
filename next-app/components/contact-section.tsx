@@ -61,13 +61,13 @@ export function ContactSection() {
           <ContactCard
             icon={<Github className="h-4 w-4" />}
             label="GitHub"
-            value="github.com/arjunmehta"
+            value={contactInfo.github.replace(/^https?:\/\/(www\.)?/, "")}
             href={contactInfo.github}
           />
           <ContactCard
             icon={<Linkedin className="h-4 w-4" />}
             label="LinkedIn"
-            value="linkedin.com/in/arjunmehta-robotics"
+            value={contactInfo.linkedin.replace(/^https?:\/\/(www\.)?/, "")}
             href={contactInfo.linkedin}
           />
         </div>
